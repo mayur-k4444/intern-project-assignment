@@ -1,0 +1,147 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  "Fira Sans", serif;
+    
+}
+.mane_contaner{
+    width: 100%;
+    height: auto;
+}
+.title_image{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)), url(image/campus-6841791_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20% 28%;
+    font-size: 35px;
+}
+.title_image button{
+    width: 150px;
+    height: 40px;
+    background-color: #eb0f0f;
+    border: none;
+    color: white;
+    cursor: pointer;   
+    transition-duration: 0.4s; 
+}
+.title_image button:hover{
+    background-color: white;
+    color: #eb0f0f;
+}
+.Community_view{
+    width: 100%;
+    height: 100vh;
+    background-color: #f5f6f8;
+    display: flex;
+    justify-content: space-between;
+}
+.Community_box1{
+    width: 40%;
+    height: 100%;
+    padding: 15% 7%;
+    color: #140b8d;
+    /* background-color: red; */
+}
+.Community_box1 button{
+    width: 150px;
+    height: 40px;
+    background-color: #eb0f0f;
+    border: none;
+    color: white;
+    cursor: pointer;   
+    transition-duration: 0.4s;
+}
+.Community_box2{
+    width: 40%;
+    height: 100%;
+    text-transform: 10px;
+    color: white;
+    /* background-color: red; */
+}
+.Community_points1{
+    width: 100%;
+    height: 33.3%;
+    background-color: #837bf8;
+    padding: 13% 15%;
+}
+.Community_points2{
+    width: 100%;
+    height: 33.3%;
+    background-color: #140b8d;
+    padding: 13% 15%;
+}
+.Community_points3{
+    width: 100%;
+    height: 33.3%;
+    background-color: #eb0f0f;
+    padding: 13% 15%;
+}
+.Collage_data_display{
+    width: 100%;
+    height: 30vh;
+    background-color: white;
+    padding: 2% 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.data_display{
+    width: 20%;
+    height: 100%;
+    /* background-color: red; */
+}
+.data_display p{
+    color:#140b8d;
+    font-weight: 500;
+}
+.data_display h1{
+    color: #837bf8;
+    font-size: 90px;
+}
+.Upcoming_Events_page{
+    width: 100%;
+    height: 100vh;
+    padding: 5% 10%;
+
+}
+.Events_pox{
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    display: block;
+    color: #837bf8;
+}
+.events_drop{
+    width: 100%;
+    /* height: 40%; */
+    height: auto;
+    margin-top: 15px;
+    /* background-color: blue; */
+    border-bottom: solid #837bf8;
+}
+#more {display: none;}
+.image_page_display{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 2% 0%;
+}
+.box1_display{
+    width: 30%;
+    height: 100%;
+    background-color: red;
+}
+.box2_display{
+    width: 25%;
+    height: 100%;
+    background-color: aqua;
+}
+.box3_display{
+    width: 45%;
+    height: 100%;
+    background-color: #140b8d;
+}
