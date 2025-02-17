@@ -45,7 +45,6 @@
     height: 100%;
     padding: 15% 7%;
     color: #140b8d;
-    /* background-color: red; */
 }
 .Community_box1 button{
     width: 150px;
@@ -92,7 +91,6 @@
 .data_display{
     width: 20%;
     height: 100%;
-    /* background-color: red; */
 }
 .data_display p{
     color:#140b8d;
@@ -111,16 +109,13 @@
 .Events_pox{
     width: 100%;
     height: 100%;
-    /* background-color: red; */
     display: block;
     color: #837bf8;
 }
 .events_drop{
     width: 100%;
-    /* height: 40%; */
     height: auto;
     margin-top: 15px;
-    /* background-color: blue; */
     border-bottom: solid #837bf8;
 }
 #more {display: none;}
@@ -130,18 +125,206 @@
     display: flex;
     padding: 2% 0%;
 }
+.image_page_display img{
+    padding: 1% 1%;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    opacity: 1;
+
+}
+.image_page_display img:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
 .box1_display{
-    width: 30%;
+    width: 40%;
     height: 100%;
-    background-color: red;
+   
+}
+.box1_sub{
+    width: 100%;
+    height: 40%;
+    display: flex;
+}
+.box2_sub{
+    width: 100%;
+    height: 60%;
 }
 .box2_display{
-    width: 25%;
-    height: 100%;
-    background-color: aqua;
+    width: 20%;
+    height: 99%;
+    display: block;
 }
 .box3_display{
-    width: 45%;
+    width: 40%;
     height: 100%;
-    background-color: #140b8d;
+}
+ .contact_page{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+ }
+ .contact_title{
+    width: 50%;
+    height: 100%;
+    background-color: #f5f6f8;
+ }
+ .contact_form{
+    width: 50%;
+    height: 100%;
+    background-color: #e6edf3;
+    padding: 20px;
+ }
+ .contact_form h2 {
+    color: #333; /* Dark gray heading */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: calc(100% - 12px); 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.contact_form button {
+    background-color: #d9534f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 30%; 
+}
+.contact_form button:hover {
+    background-color: #c9302c; 
+}
+.contact_title{
+    padding: 10% 8%;
+    color: #007bff;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+
+    .title_image {
+        height: auto; /* Adjust height for smaller screens */
+        padding: 10% 15%; /* Reduce padding */
+        font-size: 24px; /* Smaller font size */
+    }
+
+    .title_image br {
+        display: none; /* Hide line breaks */
+    }
+
+    .title_image button {
+        width: 120px; /* Adjust button width */
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .Community_view {
+        flex-direction: column; /* Stack boxes vertically */
+        height: auto; /* Adjust height */
+    }
+
+    .Community_box1 {
+        width: 100%;
+        height: auto;
+        padding: 5% 7%; /* Reduce padding */
+    }
+
+    .Community_box2 {
+        width: 100%;
+        height: auto;
+        flex-direction: column; /* Stack points vertically */
+    }
+
+    .Community_points1,
+    .Community_points2,
+    .Community_points3 {
+        width: 100%;
+        height: auto;
+        padding: 5% 10%; /* Reduce padding */
+        margin-bottom: 10px; /* Add spacing between points */
+    }
+
+    .Collage_data_display {
+        flex-direction: column; /* Stack data vertically */
+        height: auto;
+    }
+
+    .data_display {
+        width: 100%;
+        margin-bottom: 10px; /* Add spacing between data */
+    }
+
+    .data_display h1 {
+        font-size: 40px; /* Smaller font size */
+    }
+
+    .Upcoming_Events_page {
+        height: auto; /* Adjust height */
+        padding: 5%; /* Reduce padding */
+    }
+
+    .image_page_display {
+        flex-direction: column; /* Stack images vertically */
+        height: auto;
+    }
+
+    .box1_display,
+    .box2_display,
+    .box3_display {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px; /* Add spacing between image boxes */
+    }
+
+    .box1_sub {
+        flex-direction: column; /* Stack images in box1 vertically */
+        height: auto;
+    }
+    .box1_sub img {
+        width: 100%;
+        height: auto;
+    }
+
+    .box2_display img {
+        width: 100%;
+        height: auto;
+    }
+
+    .box3_display img {
+        width: 100%;
+        height: auto;
+    }
+
+    .contact_page {
+        flex-direction: column; /* Stack contact sections */
+        height: auto;
+    }
+
+    .contact_title,
+    .contact_form {
+        width: 100%;
+        height: auto;
+        padding: 10px; /* Reduce padding */
+    }
+    .contact_form button{
+        width: 100%;
+    }
 }

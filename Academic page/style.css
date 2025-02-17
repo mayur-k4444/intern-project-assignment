@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  "Fira Sans", serif;
+}
+.main_contaner{
+    width: 100%;
+    height: auto;
+}
+.Academic_title{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(54, 51, 51, 0.7), rgba(46, 43, 43, 0.7)),url(image/campus-6841791_1920.jpg);
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.Academic_title h1{
+    align-items: center;
+    font-size: 60px;
+    color: white;
+}
+.Academic_name{
+    width: 100%;
+    height: 100vh;
+    padding: 1% 15%;
+    display: flex;
+    flex-wrap: wrap; /* Allows boxes to wrap to the next line */
+    justify-content: center; /* Centers boxes horizontally */
+    gap: 20px; /* Adds space between boxes */
+    padding: 1% 30%;
+}
+.box {
+    width: 400px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    background-color: #f0f0f0; /* Light gray background */
+    border: 1px solid #ccc; /* Add a border */
+    display: flex; /* Centers content vertically and horizontally */
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
