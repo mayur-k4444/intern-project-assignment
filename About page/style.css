@@ -1,0 +1,110 @@
+
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: red;
+}
+
+
+.mission, .story {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: white;
+}
+
+.mission img, .story img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+.mission .content, .story .content {
+    width: 55%;
+}
+
+.mission h2, .story h2 {
+    color: red;
+}
+
+
+.story {
+    flex-direction: row-reverse; 
+}
+
+
+.stats {
+    text-align: center;
+    padding: 50px;
+    background-color: white;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-box {
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+        
+        height: auto;
+    
+        border-bottom: solid #837bf8;
+}
+
+.stat-box h2 {
+    margin-bottom: 10px;
+    color: red;
+}
+
+.stat-box a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mission, .story {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .mission img, .story img {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .mission .content, .story .content {
+        width: 100%;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .stat-box {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}

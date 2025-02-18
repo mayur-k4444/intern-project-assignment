@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>About Us</h1>
+        <p>This is Uploading and Downloadig Assignment website for Students,students can easily download and upload your Assignments!</p>
+    </header>
+
+    <section class="mission">
+        <div class="content">
+            <h2>INFORMATION</h2>
+            <p>Welcome to Assignment downloading and uoloading site, your one-stop platform for seamless assignment management.
+                 Our system is designed to simplify the process of downloading and uploading assignments, ensuring efficiency 
+                 and convenience for students and instructors alike.
+                 <p>This the best platform for assignment download and upload, you can easily access without any problem.</p>
+            </p>
+        </div>
+        <img src="img1.jpg" alt="Team Image">
+    </section>
+
+    <section class="story">
+        <img src="img2.jpg" alt="Grow Better">
+        <div class="content">
+        
+            <p>With Assignment downloading and uoloading site, students can easily access and submit their assignments on time, while instructors can efficiently manage, review, and grade submissions. Our user-friendly interface, secure data handling, and automated notifications make the assignment process hassle-free.
+            </p>
+            <p>We are committed to enhancing the academic experience by providing a reliable, organized, and accessible platform. Join us and experience the future of assignment management today!</p>
+        </div>
+    </section>
+
+    <section class="stats">
+        <h2>About Courses</h2>
+        <div class="stats-container">
+            <div class="stat-box">
+                <h2>BSC_IT</h2>
+                <p>BSc IT (Bachelor of Science in Information Technology) is a three-year undergraduate degree focused on
+                     computer science, software development, networking, databases, and cybersecurity<span id="dots">...</span>
+                     <span id="more">
+                          It prepares students
+                      for careers in IT, such as software development, system administration, and data management.
+                       The course includes programming languages, web development, cloud computing, and AI. 
+                     Graduates can work in IT companies, government sectors, or pursue higher studies like MSc IT or MBA.</span></p>
+                     <button onclick="myFunction()" id="myBtn">Read more</button>
+                
+            </div>
+            <div class="stat-box">
+                <h2>BSC_CS</h2>
+                <p>BSc CS (Bachelor of Science in Computer Science) is a three-year undergraduate degree that focuses on
+                     computer science principles,programming,algorithms,data structures,and software development
+                    <span id="dots1">...</span>
+                    <span id="more1"> 
+                    It covers subjects like artificial intelligence, database management, networking, and cybersecurity.
+                     Graduates can pursue careers in software development, data science,
+                     system analysis, and IT consulting or continue with higher studies like MSc CS, MCA, or MBA.</span></p>
+                     <button onclick="myFunction2()" id="myBtn1">Read more</button>
+                
+            </div>
+            <div class="stat-box">
+                <h2>BCA</h2>
+                <p>BCA (Bachelor of Computer Applications) is a three-year undergraduate degree focused on
+                     computer applications, software development, and programming<span id="dots2">...</span>
+                     <span id="more2"> It covers subjects like
+                      database management, networking, web development, and cybersecurity. BCA graduates
+                       can work as software developers, system analysts, IT support specialists,
+                     or pursue higher studies like MCA (Master of Computer Applications) or MBA in IT.</span></p>
+                     <button onclick="myFunction3()" id="myBtn2">Read more</button>
+                
+            </div>
+        </div>
+    </section>
+    <script>
+        function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+  }
+  function myFunction2(){
+    var dots = document.getElementById("dots1");
+    var moreText = document.getElementById("more1");
+    var btnText = document.getElementById("myBtn1");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+  }
+  function myFunction3(){
+    var dots = document.getElementById("dots2");
+    var moreText = document.getElementById("more2");
+    var btnText = document.getElementById("myBtn2");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+  }
+    </script>
+
+</body>
+</html>
