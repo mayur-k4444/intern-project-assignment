@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">📚</span>
+                Assignment Portal
+            </a>
+            <div class="menu-toggle">☰</div>
+            <div class="nav-links">
+                <a href="../home page/index.html">Home</a>
+                <a href="../Academic page/index.html">Academic</a>
+                <a href="../About page/index.html">About</a>
+                <a href="../Contact page/index.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
