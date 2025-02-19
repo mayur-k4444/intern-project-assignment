@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Registration</h1>
+        <form action="registratoinin" method="post" name="Registration_form" onsubmit="return registrationvalid()"> 
+            <div class="input-group">
+                <label for="firstName">Student Name</label>
+                <div class="name-fields">
+                    <input type="text" id="firstName" placeholder="First Name" name="firstName">
+                    <input type="text" id="middleName" placeholder="Middle Name" name="middleName">
+                    <input type="text" id="lastName" placeholder="Last Name" name="lastName">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="disabled" disabled selected>Please Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="email">Student E-mail</label>
+                <input type="email" id="email" placeholder="ex: myname@example.com" name="email">
+            </div>
+            <div class="input-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contactnumber">
+            </div>
+            <div class="input-group">
+                <label for="studentId">Student ID</label>
+                <input type="number" id="studentId" name="studentId">
+            </div>
+            <div class="input-group">
+                <label for="password">Create Password</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="input-group">
+                <label for="Courselist">Student Course</label>
+                <select id="Courselist" name="Courselist">
+                    <option value="" disabled selected>Please Select</option>
+                    <option value="Bcom">Bcom</option>
+                    <option value="BA">BA</option>
+                    <option value="BAMMC">BAMMC</option>
+                    <option value="BBI">BBI</option>
+                    <option value="BFM">BFM</option>
+                    <option value="Bsc">Bsc</option>
+                    <option value="Bsc.IT">Bsc.IT</option>
+                    <option value="Bsc.DS">Bsc.DS</option>
+                    <option value="Bsc.CS">Bsc.CS</option>
+                    </select>
+            </div>
+            <button type="submit">Submit</button>
+            <a href="loginform.html" class="login-link">Already have an account? Login</a>
+            <div id="error" class="error-message" name="error"></div>
+        </form>
+    </div>
+
+</body>
+</html>
