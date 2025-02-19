@@ -101,9 +101,179 @@
     border: 1px solid #87acbb;
 
 }
+.Option_box h2{
+    color: #ca132f;
+    text-align: center;
+}
 .Option_box p{
     letter-spacing: normal;
     vertical-align: baseline;
     color: #39607d;
     padding: 10%;
+    text-align: center;
+}
+.contact_page{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+ }
+ .contact_title{
+    width: 50%;
+    height: 100%;
+    background-color: #f5f6f8;
+ }
+ .contact_form{
+    width: 50%;
+    height: 100%;
+    background-color: #e6edf3;
+    padding: 20px;
+ }
+ .contact_form h2 {
+    color: #333; /* Dark gray heading */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: calc(100% - 12px); 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.contact_form button {
+    background-color: #d9534f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 30%; 
+}
+.contact_form button:hover {
+    background-color: #c9302c; 
+}
+.contact_title{
+    padding: 10% 8%;
+    color: #007bff;
+}
+
+/* Media Queries for Tablet */
+@media screen and (max-width: 768px) {
+    .Academic_title h1 {
+        font-size: 40px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .corse_box {
+        width: 45%;
+        min-width: 280px;
+    }
+
+    .Option_box {
+        width: 50%;
+        height: auto;
+        min-height: 250px;
+    }
+
+    .contact_page {
+        flex-direction: column;
+    }
+
+    .contact_title,
+    .contact_form {
+        width: 100%;
+        padding: 40px 20px;
+    }
+}
+
+/* Media Queries for Mobile */
+@media screen and (max-width: 480px) {
+    .Academic_title h1 {
+        font-size: 32px;
+    }
+
+    .Academic_name {
+        padding: 20px 10px;
+        height: 150vh;
+    }
+
+    .corse_box {
+        width: 100%;
+        height: 200px;
+    }
+
+    .Part1 {
+        font-size: 32px;
+    }
+    .Part2{
+        width: 100%;
+    }
+    .Part2 button{
+        width: 100%;
+        height: 16%;
+    }
+    .acadic_title h1 {
+        font-size: 36px;
+    }
+    .Academic_option{
+        height:224vh;
+    }
+    .option_academic{
+        height:100%;
+    }
+    .Option_box {
+        width: 100%;
+        min-height: 200px;
+        padding: 15px;
+    }
+
+    .Option_box p {
+        padding: 5%;
+    }
+
+    .contact_title,
+    .contact_form {
+        padding: 30px 15px;
+    }
+
+    .contact_form button {
+        width: 100%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+/* Touch-friendly improvements for mobile */
+@media (hover: none) and (pointer: coarse) {
+    .Part2 button,
+    .contact_form button,
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        min-height: 44px;
+    }
+
+    .Part2 button,
+    .contact_form button {
+        padding: 12px 20px;
+    }
 }
