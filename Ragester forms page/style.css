@@ -91,3 +91,49 @@ button:hover {
     margin-top: 5px;
     display: none;
 }
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .container {
+        width: 90%; /* Make container full width on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Smaller heading */
+    }
+
+    .input-group {
+        margin-bottom: 15px; /* Adjust margin */
+    }
+
+    .name-fields {
+        flex-direction: column; /* Stack name fields vertically */
+        gap: 10px; /* Adjust gap */
+    }
+
+    input[type="tel"],
+    input[type="number"],
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    select {
+        font-size: 0.9em; /* Smaller input text */
+        padding: 8px; /* Adjust padding */
+    }
+
+    button {
+        font-size: 0.9em; /* Smaller button text */
+        padding: 8px 12px; /* Adjust padding */
+    }
+
+    .login-link {
+        font-size: 0.9em; /* Smaller link text */
+    }
+}
+
+@media (max-width: 480px) { /* Even smaller screen sizes */
+    .container {
+        padding: 5px; /* Further reduce padding */
+    }
+    .name-fields input{
+        width: 100%;
+    }
+}
