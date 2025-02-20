@@ -7,6 +7,6 @@
     <title>Start page</title>
 </head>
 <body>
-    <%@ include file="http://127.0.0.1:3000/backend/assinment_dw_up/src/main/webapp/login%20page/index.html" %> 
+    <%@ include file="login page/index.html" %> 
 </body>
 </html>
