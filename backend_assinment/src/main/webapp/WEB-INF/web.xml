@@ -6,7 +6,8 @@
   <display-name>backend_assinment</display-name>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>loginindex.html</welcome-file>
+    <welcome-file>loginindex.jsp</welcome-file>
     <welcome-file>Registrationindex.html</welcome-file>
+    <welcome-file>BscDS.html</welcome-file>
   </welcome-file-list>
 </web-app>

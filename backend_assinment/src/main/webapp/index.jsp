@@ -7,6 +7,6 @@
     <title>main page</title>
 </head>
 <body>
-    <%@ include file="loginindex.html" %>
+    <jsp:include page="/loginindex.jsp"/>
 </body>
 </html>
