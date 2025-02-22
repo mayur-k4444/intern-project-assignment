@@ -146,3 +146,16 @@ window.addEventListener('resize', () => {
         document.querySelector('.overlay')?.classList.remove('active');
     }
 });
+
+
+// function loadPage(page){
+//        let contentArea=document.getElementById("contentArea");
+//        let xhr=new XMLHttpRequest();
+//        xhr.open("GET",page,true);
+//        xhr.onreadystatechange = function(){
+//         if(xhr.readyState === 4 && xhr.status === 200){
+//             contentArea.innerHTML = xhr.responseText;
+//         }
+//        } ;
+//        xhr.send();   
+// }

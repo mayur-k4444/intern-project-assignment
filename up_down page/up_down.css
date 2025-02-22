@@ -314,3 +314,26 @@ body {
 .overlay.active {
   display: block;
 }
+
+
+
+iframe {
+  width: 100%; 
+  height: 100%; 
+  border: none; 
+  background: #f4f4f4; 
+  overflow: hidden;
+}
+  /* scrollbar-width: none;
+  -ms-overflow-style: none;
+
+iframe::-webkit-scrollbar{
+  display: none;
+}
+
+.content {
+  flex-grow: 1;
+  /* padding: 20px; */
+
+
+
