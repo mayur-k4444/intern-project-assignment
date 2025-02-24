@@ -4,6 +4,7 @@ const profileForm = document.getElementById('profileForm');
 const profileImage = document.getElementById('profileImage');
 const studentNameElement = document.getElementById('StudentName');
 const studentIdElement = document.getElementById('studentId');
+let navlinks = document.getElementsByClassName("First_Year");
 
 // Profile Image Functions
 function openFileInput() {
@@ -146,3 +147,4 @@ window.addEventListener('resize', () => {
         document.querySelector('.overlay')?.classList.remove('active');
     }
 });
+

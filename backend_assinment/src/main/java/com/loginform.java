@@ -27,9 +27,9 @@ public class loginform extends HttpServlet{
                 session.setAttribute("password", password);
                 session.setAttribute("Course_list", Course_list);
 
-                if (Course_list.equals("BscDS")) {
+                if (Course_list.equals("BscIT")) {
                     
-                    resp.sendRedirect("BscDS.html");
+                    resp.sendRedirect("BscIT.jsp");
                 }
                 req.getRequestDispatcher("loginindex.jsp");
                 // resp.sendRedirect("");
