@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +11,42 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-    <link rel="stylesheet" href="up_down.css">
+    <link rel="stylesheet" href="main/up_down.css">
 </head>
 <body>
+    <% HttpSession session1 = request.getSession(false);
+
+String FirstName=null;
+String MiddleName=null;
+String LastName=null;
+String CourseName=null;
+String Email=null;
+String Phone=null;
+// Check if the session is not null and the username attribute is set
+if (session1 != null && session1.getAttribute("studentId") != null) {
+    // Get the username from the session
+    String studentId = (String) session1.getAttribute("studentId");
+
+    try{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow","root","");
+        PreparedStatement pr = con.prepareStatement("SELECT * FROM registration WHERE studentId = ?");
+        pr.setString(1,studentId);
+        ResultSet rs = pr.executeQuery();
+
+        if(rs.next()){
+            FirstName = rs.getString("firstName");
+            MiddleName = rs.getString("middleName");
+            LastName = rs.getString("lastName");
+            CourseName = rs.getString("Course_list");
+            Email = rs.getString("email");
+            Phone = rs.getString("contact");
+        }
+
+    }catch(ClassNotFoundException | SQLException e){
+        System.out.println("Error :"+e.getMessage());
+    }
+%>
     <div class="mobile-header">
         <div class="hamburger-menu" onclick="toggleSidebar()">
             <div class="bar"></div>
@@ -43,13 +79,13 @@
                     <input type="file" id="imageInput" accept="image/*" style="display: none" onchange="changeProfilePic(event)">
                 </div>
                 <!-- <h3 id="studentName">Roshni sharma</h3> -->
-                 <p id="studentName">Roshni sharma</p>
-                <p id="studentId">Student ID: ST12345</p>
+                 <p id="studentName"><%= FirstName %></p>
+                <p id="studentId">Student ID:<%= studentId%></p>
                 <button class="edit-profile-btn" onclick="openModal()">
                     <i class="fas fa-edit"></i> Edit Profile
                 </button>
             </div>
-            <a href="../home page/index.html"><i class="fas fa-home"></i>Student Profile</a>
+            <a href="BscIT.jsp"><i class="fas fa-home"></i>Student Profile</a>
             <a href="fy.html" class="First_Year"><i class="fas fa-user-graduate"></i> First Year</a>
             <a href="#"><i class="fas fa-user-graduate"></i> Second Year</a>
             <a href="#"><i class="fas fa-user-graduate"></i> Third Year</a>
@@ -64,6 +100,12 @@
         </div> -->
     </div>
 
+    <%
+        } else {
+            // Redirect to the login page if the session is not valid
+            response.sendRedirect("index.jsp");
+        }
+%>
     <!-- Modal -->
     <div class="modal" id="editProfileModal">
         <div class="modal-content">

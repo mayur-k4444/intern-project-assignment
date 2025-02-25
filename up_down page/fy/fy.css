@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -17,7 +18,7 @@ body {
     width: 90%;
     max-width: 1200px;
     background: white;
-    padding: 30px;
+    padding: 1% 4%;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

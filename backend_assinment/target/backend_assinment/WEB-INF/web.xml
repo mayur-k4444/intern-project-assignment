@@ -8,6 +8,7 @@
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>loginindex.jsp</welcome-file>
     <welcome-file>Registrationindex.html</welcome-file>
-    <welcome-file>BscDS.html</welcome-file>
+    <welcome-file>BscIT.jsp</welcome-file>
+    <welcome-file>up_down.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

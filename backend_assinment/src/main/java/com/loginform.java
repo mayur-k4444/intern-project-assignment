@@ -23,7 +23,7 @@ public class loginform extends HttpServlet{
 
             if (userDao.isValidUser(studentId,password,Course_list)) {
                 HttpSession session = req.getSession();
-                session.setAttribute("studenId",studentId);
+                session.setAttribute("studentId",studentId);
                 session.setAttribute("password", password);
                 session.setAttribute("Course_list", Course_list);
 

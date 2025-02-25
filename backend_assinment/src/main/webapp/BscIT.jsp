@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,9 +150,17 @@
             display: none;
         }
 
-        .button-container {
-            display: flex;
-            justify-content: flex-end;
+        .name-fields {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .name-fields {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
 
@@ -160,14 +169,47 @@
 <body>
     <div class="contaner_bscit">
         <div class="nav_bar">
-            <%@ include file="up_down.html" %>
+            <jsp:include page="/up_down.jsp"/>
         </div>
         <div class="display_bar">
+            <% HttpSession session1 = request.getSession(false);
+
+            String FirstName=null;
+            String MiddleName=null;
+            String LastName=null;
+            String CourseName=null;
+            String Email=null;
+            String Phone=null;
+            // Check if the session is not null and the username attribute is set
+            if (session1 != null && session1.getAttribute("studentId") != null) {
+                // Get the username from the session
+                String studentId = (String) session1.getAttribute("studentId");
+            
+                try{
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow","root","");
+                    PreparedStatement pr = con.prepareStatement("SELECT * FROM registration WHERE studentId = ?");
+                    pr.setString(1,studentId);
+                    ResultSet rs = pr.executeQuery();
+            
+                    if(rs.next()){
+                        FirstName = rs.getString("firstName");
+                        MiddleName = rs.getString("middleName");
+                        LastName = rs.getString("lastName");
+                        CourseName = rs.getString("Course_list");
+                        Email = rs.getString("email");
+                        Phone = rs.getString("contact");
+                    }
+            
+                }catch(ClassNotFoundException | SQLException e){
+                    System.out.println("Error :"+e.getMessage());
+                }
+            %>
             <div class="Student_profile">
                 <div class="profile-header">
                     <center><h1>Student Profile</h1></center>
                     <div class="profile-avatar-container">
-                        <img id="avatar" src="https://via.placeholder.com/100" alt="Student profile picture" class="profile-avatar">
+                        <img id="avatar" src="main/img.png" alt="Student profile picture" class="profile-avatar">
                         <label for="file-input" class="avatar-upload">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
@@ -177,24 +219,35 @@
                         <input type="file" id="file-input" accept="image/*">
                     </div>
                 </div>
-<% String stdid = request.getParameter("studentId");
-if(stdid == null || stdid.isEmpty()){
-    out.println(<p>Error : Student Id is missing</p>);
-    return;
-}
-try{
-    
-}
-%>
                 <div class="profile-content">
                     <form id="profile-form" class="form-grid" method="get">
-                        <div class="form-group">
-                            <label for="student-name">Full Name</label>
-                            <div class="input-container">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                </svg>
-                                <input type="text" id="student-name" placeholder="Enter your full name" required>
+                        <div class="name-fields">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <div class="input-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    <input type="text" id="first-name" value="<%= FirstName%>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="middle-name">Middle Name</label>
+                                <div class="input-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    <input type="text" id="middle-name" value="<%= MiddleName%>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <div class="input-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    <input type="text" id="last-name" value="<%=LastName %>">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -203,7 +256,16 @@ try{
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
                                 </svg>
-                                <input type="text" id="student-id" placeholder="Enter your student ID" required>
+                                <input type="text" id="student-id" value="<%= studentId%>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="course-name">Course Name</label>
+                            <div class="input-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                                <input type="text" id="course-name" value="<%= CourseName%>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -212,7 +274,7 @@ try{
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
-                                <input type="email" id="student-email" placeholder="Enter your email" required>
+                                <input type="email" id="student-email" value="<%= Email%>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -221,14 +283,18 @@ try{
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                 </svg>
-                                <input type="tel" id="student-phone" placeholder="Enter your phone number" required>
+                                <input type="tel" id="student-phone" value="<%= Phone%>">
                             </div>
-                        </div>
-                        <div class="button-container" style="grid-column: 1 / -1;">
-                            <button type="submit" class="save-button">Save Changes</button>
                         </div>
                     </form>
                 </div>
+<%
+        } else {
+            // Redirect to the login page if the session is not valid
+            response.sendRedirect("index.jsp");
+        }
+%>
+
             </div>
         </div>
 
