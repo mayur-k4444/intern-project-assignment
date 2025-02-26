@@ -119,7 +119,3 @@ input[type="file"]::file-selector-button:hover {
     display: block;
 
 }
-.wraper{
-    display: flex;
-    flex-direction: column;
-}
