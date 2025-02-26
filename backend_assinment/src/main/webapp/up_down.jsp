@@ -86,9 +86,9 @@ if (session1 != null && session1.getAttribute("studentId") != null) {
                 </button>
             </div>
             <a href="BscIT.jsp"><i class="fas fa-home"></i>Student Profile</a>
-            <a href="fy.html" class="First_Year"><i class="fas fa-user-graduate"></i> First Year</a>
-            <a href="#"><i class="fas fa-user-graduate"></i> Second Year</a>
-            <a href="#"><i class="fas fa-user-graduate"></i> Third Year</a>
+            <a href="#fy_display" class="First_Year"><i class="fas fa-user-graduate"></i> First Year</a>
+            <a href="sy/sy.html"><i class="fas fa-user-graduate"></i> Second Year</a>
+            <a href="ty/ty.html"><i class="fas fa-user-graduate"></i> Third Year</a>
             <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
 

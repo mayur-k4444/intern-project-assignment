@@ -21,12 +21,12 @@
             overflow: hidden;
         }
         .nav_bar{
-            width: auto;
+            width: 20%;
             height: 100vh;
             overflow-y: auto;
         }
         .display_bar{
-            width: 83%;
+            width: 80%;
             height: 100vh;
             overflow-y: auto;
             position: relative; 
@@ -34,6 +34,7 @@
         }
         .Student_profile{
             width: 100%;
+            height: 100vh;
             padding: 1% 2%;
         }
         .profile-header {
@@ -114,7 +115,6 @@
 
         .input-container:focus-within {
             border-color: #4f46e5;
-            ring: 2px solid #4f46e5;
         }
 
         .input-container svg {
@@ -164,6 +164,12 @@
         }
 
 
+        #fy_display{
+            width: 100%;
+            height: auto;
+            padding: 1% 2%;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -288,14 +294,21 @@
                         </div>
                     </form>
                 </div>
+
+            </div>
+            <div id="fy_display">
+                <form action="upload" method="post">
+                    <p style="display: none;" name="studentId2"><%= studentId%></p>
+                    <jsp:include page="/fy.jsp"/>
+                </form>
+            </div>
 <%
         } else {
             // Redirect to the login page if the session is not valid
             response.sendRedirect("index.jsp");
         }
 %>
-
-            </div>
+            
         </div>
 
     </div>
