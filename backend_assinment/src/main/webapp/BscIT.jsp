@@ -298,7 +298,7 @@
             </div>
             <div id="fy_display">
                 <form action="upload" method="post">
-                    <p style="display: none;" name="studentId2"><%= studentId%></p>
+                    <input type="number" value="<%= studentId%>" name="StudentId2" style="display:none;">
                     <jsp:include page="/fy.jsp"/>
                 </form>
             </div>

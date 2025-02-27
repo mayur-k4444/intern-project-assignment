@@ -297,8 +297,10 @@
 
             </div>
             <div id="fy_display">
-                <p style="display: none;"><%= studentId%></p>
-                <jsp:include page="/fy.jsp"/>
+                <form action="upload" method="post">
+                    <input type="number" value="<%= studentId%>" name="StudentId2" style="display:none;">
+                    <jsp:include page="/fy.jsp"/>
+                </form>
             </div>
 <%
         } else {

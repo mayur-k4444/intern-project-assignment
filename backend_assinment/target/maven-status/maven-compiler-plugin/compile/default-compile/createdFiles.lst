@@ -1,4 +1,5 @@
 com\UserDaoImp.class
 com\registrationin.class
+com\upload.class
 com\UserDao.class
 com\loginform.class

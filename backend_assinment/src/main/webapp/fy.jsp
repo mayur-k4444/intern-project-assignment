@@ -17,6 +17,8 @@
         <h1>First Year Assignments</h1>
         <h3>SEM I</h3>
 
+
+        <input type="text" value="FY" name="FirstYear" style="display:none;">
         <!-- Math Assignment -->
         <div class="assignment">
             <h2>Imperative Programming Assignment</h2>
@@ -27,7 +29,7 @@
              
             <p>Upload Answer</p>
             <input type="file" id="mathfile" name="Ipa">
-            <button class="upload-btn" onclick="uploadFile('mathfile','mathsuccess')">Upload Answer</button>
+            <button class="upload-btn" onclick="uploadFile('mathfile','mathsuccess')" name="upload1" type="submit">Upload Answer</button>
             <p class="success-Message" id="mathsuccess"></p>
         </div>
 
@@ -102,7 +104,7 @@
         </div>
              
             <p>Upload Answer</p>
-            <input type="file" id="mathfile">
+            <input type="file" id="mathfile" name="Oopa">
             <button class="upload-btn" onclick="uploadFile('mathfile','mathsuccess')">Upload Answer</button>
             <p class="success-Message" id="mathsuccess"></p>
         </div>
@@ -116,7 +118,7 @@
             <a href="pt.pdf" class="download-btn" download>Download</a>    
             </div>
             <p>Upload Answer</p>
-            <input type="file" id="mathfile">
+            <input type="file" id="mathfile" name="Maa">
             <button class="upload-btn" onclick="uploadFile('mathfile','mathsuccess')">Upload Answer</button>
             <p class="success-Message" id="mathFilesuccess"></p>
         </div>
@@ -129,7 +131,7 @@
         </div>
              
             <p>Upload Answer</p>
-            <input type="file" id="mathfile">
+            <input type="file" id="mathfile" name="Wpa">
             <button class="upload-btn" onclick="uploadFile('mathfile','mathsuccess')">Upload Answer</button>
             <p class="success-Message" id="mathsuccess"></p>
         </div>
@@ -143,7 +145,7 @@
             <a href="pt.pdf" class="download-btn" download>Download</a>    
             </div>
             <p>Upload Answer</p>
-            <input type="file" id="mathfile">
+            <input type="file" id="mathfile" name="NSma">
             <button class="upload-btn" onclick="uploadFile('sciencefile','mathsuccess')">Upload Answer</button>
             <p class="success-Message" id="mathFilesuccess"></p>
         </div>
@@ -155,7 +157,7 @@
         </div>
              
             <p>Upload Answer</p>
-            <input type="file" id="mathfile">
+            <input type="file" id="mathfile" name="Gca">
             <button class="upload-btn" onclick="uploadFile('mathfile','mathsuccess')">Upload Answer</button>
             <p class="success-Message" id="mathsuccess"></p>
         </div>
