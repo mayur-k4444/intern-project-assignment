@@ -1,71 +1,92 @@
 package com;
 
 import java.io.IOException;
-// import java.io.PrintWriter;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 
 @WebServlet("/upload")
-public class upload extends HttpServlet{
+@MultipartConfig(fileSizeThreshold = 1024 * 1024, // 1MB (threshold for writing to disk)
+                maxFileSize = 10485760 * 2,   // 20MB (double the current limit)
+                maxRequestSize = 10485760 * 4) // 40MB (double the maxFileSize)
+public class upload extends HttpServlet {
+    private static final String UPLOAD_DIRECTORY = "C:/Assingment-project/backend_assinment/src/main/uploads";
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        // PrintWriter out = resp.getWriter();
 
         String stdId = req.getParameter("StudentId2");
         String Coursename = req.getParameter("FirstYear");
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow ","root","");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow", "root", "");
             PreparedStatement pr = con.prepareStatement("insert into bscit(StudentId,Course_name) values(?,?)");
             pr.setString(1, stdId);
             pr.setString(2, Coursename);
             int i = pr.executeUpdate();
-            if (i>0) {
-                System.out.println("Upload succesfully");
+            if (i > 0) {
+                System.out.println("Upload successfully");
             }
-        }catch (Exception e) {
-            System.out.println("Error :"+e.getMessage());
+            pr.close();
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error :" + e.getMessage());
         }
-        String Ipa = req.getParameter("Ipa");
-        if (Ipa != null) {
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow ","root","");
-            PreparedStatement pr = con.prepareStatement("UPDATE bscit SET Ipa = ? WHERE StudentId = ?");
-            pr.setString(1, Ipa);
-            pr.setString(2, stdId);
-            int i = pr.executeUpdate();
-            if (i>0) {
-                System.out.println("Upload ipa succesfully");
-            }
 
-            } catch (Exception e) {
-                System.out.println("Error :"+e.getMessage());
-            }
-        }
-        String Dea = req.getParameter("Dea");
-        String Osa = req.getParameter("Osa");
-        String Dma = req.getParameter("Dma");
-        String Csa = req.getParameter("Csa");
-
-        String Oops = req.getParameter("Oops");
-        String Maa = req.getParameter("Maa");
-        String Wpa = req.getParameter("Wpa");
-        String NSma = req.getParameter("NSma");
-        String Gca = req.getParameter("Gca");
-
-        
-
-
-        
+        updateField(req, "Ipa", stdId);
+        updateField(req, "Dea", stdId);
+        updateField(req, "Osa", stdId);
+        updateField(req, "Dma", stdId);
+        updateField(req, "Csa", stdId);
+        updateField(req, "Oops", stdId);
+        updateField(req, "Maa", stdId);
+        updateField(req, "Wpa", stdId);
+        updateField(req, "NSma", stdId);
+        updateField(req, "Gca", stdId);
     }
 
-}
+    private void updateField(HttpServletRequest req, String fieldName, String stdId) {
+        // String fieldValue = req.getParameter(fieldName);
+        
+            try {
+                Part filePart = req.getPart(fieldName);
+                InputStream fileContent = filePart.getInputStream();
+
+                Path uploadPath = Paths.get(UPLOAD_DIRECTORY);
+                if (!Files.exists(uploadPath)) {
+                    Files.createDirectories(uploadPath);
+                }
+                Path filePath = uploadPath.resolve(filePart.getSubmittedFileName());
+                Files.copy(fileContent, filePath, StandardCopyOption.REPLACE_EXISTING);
+
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow", "root", "");
+                PreparedStatement pr = con.prepareStatement("UPDATE bscit SET " + fieldName + " = ? WHERE StudentId = ?");
+                pr.setString(1, filePath.toString());
+                pr.setString(2, stdId);
+                int i = pr.executeUpdate();
+                if (i > 0) {
+                    System.out.println("Upload file" + fieldName + " successfully");
+                }
+                pr.close();
+                con.close();
+            } catch (Exception e) {
+                System.out.println("Error :" + e.getMessage());
+            }
+        }
+    }

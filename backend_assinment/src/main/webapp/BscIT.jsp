@@ -21,8 +21,8 @@
             overflow: hidden;
         }
         .nav_bar{
-            width: 20%;
-            height: 100vh;
+            width: 22%;
+            height: 95vh;
             overflow-y: auto;
         }
         .display_bar{
@@ -297,7 +297,7 @@
 
             </div>
             <div id="fy_display">
-                <form action="upload" method="post">
+                <form action="upload" method="post" enctype="multipart/form-data">
                     <input type="number" value="<%= studentId%>" name="StudentId2" style="display:none;">
                     <jsp:include page="/fy.jsp"/>
                 </form>
