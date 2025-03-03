@@ -24,7 +24,7 @@
             <h2>Imperative Programming Assignment</h2>
             <div class="file-row">
             <p>Assignment File</p>
-            <a href="pt.pdf" class="download-btn" download>Download</a>
+            <a href="main/pt.pdf" class="download-btn" download>Download</a>
         </div>
              
             <p>Upload Answer</p>

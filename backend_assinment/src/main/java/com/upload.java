@@ -35,9 +35,9 @@ public class upload extends HttpServlet {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow", "root", "");
-            PreparedStatement pr = con.prepareStatement("insert into bscit(StudentId,Course_name) values(?,?)");
-            pr.setString(1, stdId);
-            pr.setString(2, Coursename);
+            PreparedStatement pr = con.prepareStatement("UPDATE bscit SET FirstYear = ? WHERE StudentId = ?");
+            pr.setString(1, Coursename);
+            pr.setString(2, stdId);
             int i = pr.executeUpdate();
             if (i > 0) {
                 System.out.println("Upload successfully");

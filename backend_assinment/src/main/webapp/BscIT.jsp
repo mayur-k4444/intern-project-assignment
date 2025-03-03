@@ -298,7 +298,6 @@
             </div>
             <div id="fy_display">
                 <form action="upload" method="post" enctype="multipart/form-data">
-                    <input type="number" value="<%= studentId%>" name="StudentId2" style="display:none;">
                     <jsp:include page="/fy.jsp"/>
                 </form>
             </div>

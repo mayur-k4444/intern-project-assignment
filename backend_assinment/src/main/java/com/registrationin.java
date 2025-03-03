@@ -31,6 +31,7 @@ public class registrationin extends HttpServlet{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow","root","");
             PreparedStatement pr = con.prepareStatement("insert into registration(firstName,middleName,lastName,gender,email,contact,studentId,password,Course_list) values(?,?,?,?,?,?,?,?,?)");
+            PreparedStatement pr1 = con.prepareStatement("insert into bscit(StudentId) values(?)");
             pr.setString(1, firstName);
             pr.setString(2, middleName);
             pr.setString(3, lastName);
@@ -40,6 +41,12 @@ public class registrationin extends HttpServlet{
             pr.setString(7, studentId);
             pr.setString(8, password);
             pr.setString(9, Courselist);
+
+            pr1.setString(1, studentId);
+            int j = pr1.executeUpdate();
+            if (j>0) {
+                out.println("bsit is succesfully");
+            }
 
             int i = pr.executeUpdate();
             if (i>0) {
@@ -53,5 +60,6 @@ public class registrationin extends HttpServlet{
         resp.sendRedirect("index.jsp");
 
     }
+
 
 }
