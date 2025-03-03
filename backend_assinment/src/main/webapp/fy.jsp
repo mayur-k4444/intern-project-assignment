@@ -43,7 +43,7 @@
             </div>
             <p>Upload Answer</p>
             <input type="file" id="mathfile" name="Dea">
-            <button class="upload-btn" onclick="uploadFile('mathfile','mathsuccess')">Upload Answer</button>
+            <button class="upload-btn" onclick="uploadFile('mathfile','mathsuccess')" name="upload" type="submit">Upload Answer</button>
             <p class="success-Message" id="mathFilesuccess"></p>
         </div>
 
