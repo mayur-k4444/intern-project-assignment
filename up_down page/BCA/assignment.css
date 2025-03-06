@@ -1,3 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
@@ -8,10 +15,10 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     background: white;
-    padding: 30px;
+    padding: 1% 4%;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -112,9 +119,4 @@ input[type="file"]::file-selector-button:hover {
     margin-top: 10px;
     display: block;
 
-}
-
-.wraper{
-    display: flex;
-    flex-direction: column;
 }
