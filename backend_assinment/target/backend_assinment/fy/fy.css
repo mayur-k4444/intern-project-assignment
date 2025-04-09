@@ -14,10 +14,11 @@ body {
     justify-content: center;
 }
 
-.container {
+.container_subject {
     width: 100%;
+    height: auto;
     display: block;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     background: white;
     /* padding: 1% 4%; */
     border-radius: 15px;

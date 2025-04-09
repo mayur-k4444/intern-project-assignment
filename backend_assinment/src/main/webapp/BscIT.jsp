@@ -20,13 +20,13 @@
             display: flex;
             overflow: hidden;
         }
-        .nav_bar{
-            width: 22%;
-            height: 95vh;
+        .navbar{
+            width: auto;
+            height: 100vh;
             overflow-y: auto;
         }
         .display_bar{
-            width: 80%;
+            width: 90%;
             height: 100vh;
             overflow-y: auto;
             position: relative; 
@@ -173,8 +173,8 @@
     </style>
 </head>
 <body>
-    <div class="contaner_bscit">
-        <div class="nav_bar">
+<div class="contaner_bscit">
+        <div class="navbar">
             <jsp:include page="/up_down.jsp"/>
         </div>
         <div class="display_bar">
@@ -296,21 +296,24 @@
                 </div>
 
             </div>
-            <div id="fy_display">
-                <form action="upload" method="post" enctype="multipart/form-data">
-                    <jsp:include page="/fy.jsp"/>
-                </form>
-            </div>
-<%
-        } else {
-            // Redirect to the login page if the session is not valid
-            response.sendRedirect("index.jsp");
-        }
-%>
-            
-        </div>
+        
 
+        <div class="fyit">
+            <jsp:include page="/fy.jsp"/>
+            <jsp:include page="/sy.jsp"/>
+            <jsp:include page="/ty.jsp"/>
+
+        </div>
+<%
+    } else {
+        // Redirect to the login page if the session is not valid
+        response.sendRedirect("index.jsp");
+    }
+%>
+        
     </div>
+
+</div>
     <script>
         // Handle profile picture upload
         const fileInput = document.getElementById('file-input');

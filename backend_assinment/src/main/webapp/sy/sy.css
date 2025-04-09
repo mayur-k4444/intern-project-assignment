@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
@@ -9,6 +15,8 @@ body {
 
 .container {
     width: 90%;
+    height: auto;
+    display: block;
     max-width: 1200px;
     background: white;
     padding: 30px;

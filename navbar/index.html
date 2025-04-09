@@ -7,29 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-icon">📚</span>
-                Assignment Portal
-            </a>
-            <div class="menu-toggle">☰</div>
-            <div class="nav-links">
-                <a href="../home page/index.html">Home</a>
-                <a href="../Academic page/index.html">Academic</a>
-                <a href="../About page/index.html">About</a>
-                <a href="../Contact page/index.html">Contact</a>
+    <div class="nav_bar">
+        <div class="container">
+            <div class="sidebar" id="sidebar">
+                <div class="close-sidebar" onclick="toggleSidebar()"></div>
+                <h2>Bsc IT</h2>
+                <div class="profile-section">
+                    <div class="profile-img-wrapper">
+                        <img src="main/img.png" alt="Student Profile" class="profile-img" id="profileImage">
+                        <div class="image-options">
+                            <label for="imageInput" class="change-photo-label">
+                                <span class="material-icons"><img src="main/image.png" width="20" height="20"></span>
+                            </label>
+                            <div class="dropdown-menu" id="imageDropdown">
+                                <div class="dropdown-item" onclick="openFileInput()">
+                                    <i class="fas fa-file-upload"></i> Upload File
+                                </div>
+                                <div class="dropdown-item" onclick="useDefaultImage()">
+                                    <i class="fas fa-image"></i> Use Default
+                                </div>
+                            </div>
+                        </div>
+                        <input type="file" id="imageInput" accept="image/*" style="display: none" onchange="changeProfilePic(event)">
+                    </div>
+                    
+                     <p id="studentName"><%= FirstName %></p>
+                    <p id="studentId">Student ID:<%= studentId%></p>
+                    <button class="edit-profile-btn" onclick="openModal()">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+                <a href="BscIT.jsp"><i class="fas fa-home"></i>Student Profile</a>
+                <a href="#wraper" class="First_Year"><i class="fas fa-user-graduate"></i> First Year</a>
+                <a href="sy/sy.html"><i class="fas fa-user-graduate"></i> Second Year</a>
+                <a href="ty/ty.html"><i class="fas fa-user-graduate"></i> Third Year</a>
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
+    
+            <!-- <div class="main-content">
+                <div class="dashboard-header">
+                    <h1>Welcome, Roshni sharma!</h1>
+                    <p>Student Dashboard</p>
+                </div>
+            </div> -->
         </div>
-    </nav>
-
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+    </div>
 </body>
 </html>

@@ -1,19 +1,33 @@
-function uploadFile(fileInput,successMessage) {
+function uploadFile(fileInputId, subject) {
     let fileInput = document.getElementById(fileInputId);
+    let file = fileInput.files[0];
 
-    let successMessage = document.getElementById(successMessageId);
-
-    if(!fileInput || !successMessage){
-        console.error("invalid element.check HTML.");
+    if (!file) {
+        alert("Please select a file to upload.");
         return;
     }
 
-    if (fileInput,successMessage.files.length === 0) {
-        alert("Please select a file to upload!");
-        return;
-    } 
-    setTimeout(()=>{
-        successMessage.innerHTML = "Successfully uploaded!";
+    let formData = new FormData();
+    formData.append("file", file);
+    formData.append("subject", subject);
 
-    }, 1000);
+    fetch("upload_data_bscit", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        let successMsg = document.getElementById("success" + subject);
+        if (data.status === "success") {
+            successMsg.innerText = "Upload successful!";
+            successMsg.style.color = "green";
+        } else {
+            successMsg.innerText = "Error: " + data.message;
+            successMsg.style.color = "red";
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Upload failed.");
+    });
 }

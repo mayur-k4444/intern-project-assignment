@@ -55,8 +55,8 @@ if (session1 != null && session1.getAttribute("studentId") != null) {
         </div>
         <h2>Dashboard</h2>
     </div>
-
-    <div class="container">
+    <div class="container_mean_nava">
+    <div class="container_bar">
         <div class="sidebar" id="sidebar">
             <div class="close-sidebar" onclick="toggleSidebar()">×</div>
             <h2>Bsc IT</h2>
@@ -86,9 +86,9 @@ if (session1 != null && session1.getAttribute("studentId") != null) {
                 </button>
             </div>
             <a href="BscIT.jsp"><i class="fas fa-home"></i>Student Profile</a>
-            <a href="#fy_display" class="First_Year"><i class="fas fa-user-graduate"></i> First Year</a>
-            <a href="sy/sy.html"><i class="fas fa-user-graduate"></i> Second Year</a>
-            <a href="ty/ty.html"><i class="fas fa-user-graduate"></i> Third Year</a>
+            <a href="#wraper" class="First_Year"><i class="fas fa-user-graduate"></i> First Year</a>
+            <a href="#secondwraper"><i class="fas fa-user-graduate"></i> Second Year</a>
+            <a href="#Thirdwraper"><i class="fas fa-user-graduate"></i> Third Year</a>
             <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
 
@@ -98,6 +98,7 @@ if (session1 != null && session1.getAttribute("studentId") != null) {
                 <p>Student Dashboard</p>
             </div>
         </div> -->
+    </div>
     </div>
 
     <%

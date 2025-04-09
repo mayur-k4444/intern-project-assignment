@@ -1,6 +1,9 @@
 package com;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,6 +20,9 @@ public class loginform extends HttpServlet{
         resp.setContentType("text/html");
         String studentId = req.getParameter("studentId");
         String password = req.getParameter("password");
+        HttpSession session3 = req.getSession();
+        session3.setAttribute("studentId", "someStudentId");
+
 
         try{
             String Course_list = userDao.getCourseList(studentId,password);

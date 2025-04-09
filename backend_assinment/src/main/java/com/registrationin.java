@@ -27,6 +27,21 @@ public class registrationin extends HttpServlet{
         String password = req.getParameter("password");
         String Courselist = req.getParameter("Courselist");
 
+        if (Courselist.equals("BscIT")) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow","root","");
+                PreparedStatement pr = con.prepareStatement("insert into bscit(StudentId) values(?)");
+                pr.setString(1, studentId);
+                int i = pr.executeUpdate();
+                if (i>0) {
+                    out.println("insert upload succesfully");
+                }
+            } catch (Exception e) {
+                System.out.println("Error :"+e.getMessage());
+            }
+            
+        }
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow","root","");
