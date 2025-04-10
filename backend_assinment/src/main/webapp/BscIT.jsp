@@ -35,12 +35,24 @@
         .Student_profile{
             width: 100%;
             height: 100vh;
-            padding: 1% 2%;
+            /* padding: 1% 2%; */
         }
         .profile-header {
             background: #4f46e5;
             height: 120px;
             position: relative;
+        }
+        .success_Message{
+            color: green;
+            float: right;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .unsuccess_Message{
+            color: red;
+            float: right;
+            font-weight: bold;
+            margin-top: 10px;
         }
 
         .profile-avatar-container {
@@ -296,7 +308,12 @@
                 </div>
 
             </div>
-        
+<%
+        } else {
+            // Redirect to the login page if the session is not valid
+            response.sendRedirect("index.jsp");
+        }
+%>
 
         <div class="fyit">
             <jsp:include page="/fy.jsp"/>
@@ -304,12 +321,7 @@
             <jsp:include page="/ty.jsp"/>
 
         </div>
-<%
-    } else {
-        // Redirect to the login page if the session is not valid
-        response.sendRedirect("index.jsp");
-    }
-%>
+
         
     </div>
 

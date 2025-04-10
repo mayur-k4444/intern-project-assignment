@@ -115,7 +115,7 @@ input[type="file"]::file-selector-button:hover {
 .upload-btn:hover{
     background-color: #1976D2;
 }
-.success-message{
+.success_Message{
     color: green;
     font-weight: bold;
     margin-top: 10px;
