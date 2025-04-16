@@ -242,6 +242,9 @@
           }
           
           @media (max-width: 768px) {
+            .container_mean_nava{
+              width: 0vh;
+            }
             .mobile-header {
                 display: flex;
             }

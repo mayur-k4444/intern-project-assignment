@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,45 @@
 
 </head>
 <body>
+    <%
+        String studentId = (String) session.getAttribute("studentId");
+        String subject = request.getParameter("subject");
+        if (studentId == null) {
+            response.sendRedirect("loginindex.jsp");
+            return;
+        }
+        String Ppa = null;
+        String Dsa = null;
+        String Cna = null;
+        String Dbmsa = null;
+        String Ama = null;
+        String Cja = null;
+        String Esa = null;
+        String Costa = null;
+        String Sea = null;
+        String Cgaa = null;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow","root","");
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM bscit WHERE StudentId = ?");
+            ps.setString(1, studentId);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                Ppa = rs.getString("Ppa");
+                Dsa = rs.getString("Dsa");
+                Cna = rs.getString("Cna");
+                Dbmsa = rs.getString("Dbmsa");
+                Ama = rs.getString("Ama");
+                Cja = rs.getString("Cja");
+                Esa = rs.getString("Esa");
+                Costa = rs.getString("Costa");
+                Sea = rs.getString("Sea");
+                Cgaa = rs.getString("Cgaa");
+            }
+        }catch(ClassNotFoundException | SQLException e){
+            System.out.println("Error :"+e.getMessage());
+        }
+    %>
     <div class="wraper" id="secondwraper">
         <div class="container_subject">
             <h1>Second Year Assignments</h1>
@@ -21,12 +63,18 @@
                     <p>Assignment File</p>
                     <a href="pt.pdf" class="download-btn" download>Download</a>
                 </div>
-                <form action="upload_data_bscit" method="post" enctype="multipart/form-data">
+                <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
-                    <input type="file" name="file">
+                    <input type="file" name="file" class="file">
                     <input type="text" value="Ppa" name="subject" style="display:none;">
-                    <button class="upload-btn" type="submit" onclick="uploadFile('filePpa', 'Ppa')">Upload Answer</button>
-                    <p class="success-Message" id="successPpa"></p>
+                    <button class="upload-btn" type="submit">Upload Answer</button>
+                    <% 
+                    if(Ppa==null){%>
+                        <p class="unsuccess_Message" id="successIpa">Unsuccessfull upload</p>
+                    <%}
+                    else{%>
+                        <p class="success_Message" id="successIpa">Successfull upload</p>
+                    <%}%>
                 </form>
             </div>
     
@@ -37,12 +85,18 @@
                     <p>Assignment File</p>
                     <a href="pt.pdf" class="download-btn" download>Download</a>
                 </div>
-                <form action="upload_data_bscit" method="post" enctype="multipart/form-data">
+                <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
-                    <input type="file" name="file">
+                    <input type="file" name="file" class="file">
                     <input type="text" value="Dsa" name="subject" style="display:none;">
-                    <button class="upload-btn" type="submit" onclick="uploadFile('fileDsa', 'Dsa')">Upload Answer</button>
-                    <p class="success-Message" id="successDsa"></p>
+                    <button class="upload-btn" type="submit">Upload Answer</button>
+                    <% 
+                    if(Dsa==null){%>
+                        <p class="unsuccess_Message" id="successIpa">Unsuccessfull upload</p>
+                    <%}
+                    else{%>
+                        <p class="success_Message" id="successIpa">Successfull upload</p>
+                    <%}%>
                 </form>
             </div>
     
@@ -53,12 +107,18 @@
                     <p>Assignment File</p>
                     <a href="pt.pdf" class="download-btn" download>Download</a>
                 </div>
-                <form action="upload_data_bscit" method="post" enctype="multipart/form-data">
+                <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
-                    <input type="file" name="file">
+                    <input type="file" name="file" class="file">
                     <input type="text" value="Cna" name="subject" style="display:none;">
-                    <button class="upload-btn" type="submit" onclick="uploadFile('fileCna', 'Cna')">Upload Answer</button>
-                    <p class="success-Message" id="successCna"></p>
+                    <button class="upload-btn" type="submit">Upload Answer</button>
+                    <% 
+                    if(Cna==null){%>
+                        <p class="unsuccess_Message" id="successIpa">Unsuccessfull upload</p>
+                    <%}
+                    else{%>
+                        <p class="success_Message" id="successIpa">Successfull upload</p>
+                    <%}%>
                 </form>
             </div>
     
@@ -69,12 +129,18 @@
                     <p>Assignment File</p>
                     <a href="pt.pdf" class="download-btn" download>Download</a>
                 </div>
-                <form action="upload_data_bscit" method="post" enctype="multipart/form-data">
+                <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
-                    <input type="file" name="file">
+                    <input type="file" name="file" class="file">
                     <input type="text" value="Dbmsa" name="subject" style="display:none;">
-                    <button class="upload-btn" type="submit" onclick="uploadFile('fileDbmsa', 'Dbmsa')">Upload Answer</button>
-                    <p class="success-Message" id="successDbmsa"></p>
+                    <button class="upload-btn" type="submit" >Upload Answer</button>
+                    <% 
+                    if(Dbmsa==null){%>
+                        <p class="unsuccess_Message" id="successIpa">Unsuccessfull upload</p>
+                    <%}
+                    else{%>
+                        <p class="success_Message" id="successIpa">Successfull upload</p>
+                    <%}%>
                 </form>
             </div>
     
@@ -85,13 +151,18 @@
                     <p>Assignment File</p>
                     <a href="pt.pdf" class="download-btn" download>Download</a>
                 </div>
-                <form action="upload_data_bscit" method="post" enctype="multipart/form-data">
+                <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
-                    <input type="file" name="file">
+                    <input type="file" name="file" class="file">
                     <input type="text" value="Ama" name="subject" style="display:none;">
-                    <button class="upload-btn" type="submit" onclick="uploadFile('fileAma', 'Ama')">Upload Answer</button>
-                    <p class="success-Message" id="successAma"></p>
-                </form>
+                    <button class="upload-btn" type="submit">Upload Answer</button>
+                    <% 
+                    if(Ama==null){%>
+                        <p class="unsuccess_Message" id="successIpa">Unsuccessfull upload</p>
+                    <%}
+                    else{%>
+                        <p class="success_Message" id="successIpa">Successfull upload</p>
+                    <%}%>
             </div>
         </div>
     
@@ -106,12 +177,18 @@
                     <p>Assignment File</p>
                     <a href="pt.pdf" class="download-btn" download>Download</a>
                 </div>
-                <form action="upload_data_bscit" method="post" enctype="multipart/form-data">
+                <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
-                    <input type="file" name="file">
+                    <input type="file" name="file" class="file">
                     <input type="text" value="Cja" name="subject" style="display:none;">
-                    <button class="upload-btn" type="submit" onclick="uploadFile('fileCja', 'Cja')">Upload Answer</button>
-                    <p class="success-Message" id="successCja"></p>
+                    <button class="upload-btn" type="submit" >Upload Answer</button>
+                    <% 
+                    if(Cja==null){%>
+                        <p class="unsuccess_Message" id="successIpa">Unsuccessfull upload</p>
+                    <%}
+                    else{%>
+                        <p class="success_Message" id="successIpa">Successfull upload</p>
+                    <%}%>
                 </form>
             </div>
     
@@ -122,12 +199,18 @@
                     <p>Assignment File</p>
                     <a href="pt.pdf" class="download-btn" download>Download</a>
                 </div>
-                <form action="upload_data_bscit" method="post" enctype="multipart/form-data">
+                <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
-                    <input type="file" name="file">
+                    <input type="file" name="file" class="file">
                     <input type="text" value="Esa" name="subject" style="display:none;">
-                    <button class="upload-btn" type="submit" onclick="uploadFile('fileEsa', 'Esa')">Upload Answer</button>
-                    <p class="success-Message" id="successEsa"></p>
+                    <button class="upload-btn" type="submit">Upload Answer</button>
+                    <% 
+                    if(Esa==null){%>
+                        <p class="unsuccess_Message" id="successIpa">Unsuccessfull upload</p>
+                    <%}
+                    else{%>
+                        <p class="success_Message" id="successIpa">Successfull upload</p>
+                    <%}%>
                 </form>
             </div>
     
@@ -138,12 +221,18 @@
                     <p>Assignment File</p>
                     <a href="pt.pdf" class="download-btn" download>Download</a>
                 </div>
-                <form action="upload_data_bscit" method="post" enctype="multipart/form-data">
+                <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
-                    <input type="file" name="file">
+                    <input type="file" name="file" class="file">
                     <input type="text" value="Costa" name="subject" style="display:none;">
-                    <button class="upload-btn" type="submit" onclick="uploadFile('fileCosta', 'Costa')">Upload Answer</button>
-                    <p class="success-Message" id="successCosta"></p>
+                    <button class="upload-btn" type="submit" >Upload Answer</button>
+                    <% 
+                    if(Costa==null){%>
+                        <p class="unsuccess_Message" id="successIpa">Unsuccessfull upload</p>
+                    <%}
+                    else{%>
+                        <p class="success_Message" id="successIpa">Successfull upload</p>
+                    <%}%>
                 </form>
             </div>
     
@@ -154,12 +243,18 @@
                     <p>Assignment File</p>
                     <a href="pt.pdf" class="download-btn" download>Download</a>
                 </div>
-                <form action="upload_data_bscit" method="post" enctype="multipart/form-data">
+                <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
-                    <input type="file" name="file">
+                    <input type="file" name="file" class="file">
                     <input type="text" value="Sea" name="subject" style="display:none;">
-                    <button class="upload-btn" type="submit" onclick="uploadFile('fileSea', 'Sea')">Upload Answer</button>
-                    <p class="success-Message" id="successSea"></p>
+                    <button class="upload-btn" type="submit">Upload Answer</button>
+                    <% 
+                    if(Sea==null){%>
+                        <p class="unsuccess_Message" id="successIpa">Unsuccessfull upload</p>
+                    <%}
+                    else{%>
+                        <p class="success_Message" id="successIpa">Successfull upload</p>
+                    <%}%>
                 </form>
             </div>
     
@@ -170,12 +265,18 @@
                     <p>Assignment File</p>
                     <a href="pt.pdf" class="download-btn" download>Download</a>
                 </div>
-                <form action="upload_data_bscit" method="post" enctype="multipart/form-data">
+                <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
-                    <input type="file" name="file">
+                    <input type="file" name="file" class="file">
                     <input type="text" value="Cgaa" name="subject" style="display:none;">
-                    <button class="upload-btn" type="submit" onclick="uploadFile('fileCgaa', 'Cgaa')">Upload Answer</button>
-                    <p class="success-Message" id="successCgaa"></p>
+                    <button class="upload-btn" type="submit">Upload Answer</button>
+                    <% 
+                    if(Cgaa==null){%>
+                        <p class="unsuccess_Message" id="successIpa">Unsuccessfull upload</p>
+                    <%}
+                    else{%>
+                        <p class="success_Message" id="successIpa">Successfull upload</p>
+                    <%}%>
                 </form>
             </div>
         </div>

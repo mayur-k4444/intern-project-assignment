@@ -2,6 +2,7 @@ function uploadFile(fileInputId, subject) {
     let fileInput = document.getElementById(fileInputId);
     let file = fileInput.files[0];
 
+
     if (!file) {
         alert("Please select a file to upload.");
         return;

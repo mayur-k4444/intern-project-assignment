@@ -89,7 +89,7 @@ if (session1 != null && session1.getAttribute("studentId") != null) {
             <a href="#wraper" class="First_Year"><i class="fas fa-user-graduate"></i> First Year</a>
             <a href="#secondwraper"><i class="fas fa-user-graduate"></i> Second Year</a>
             <a href="#Thirdwraper"><i class="fas fa-user-graduate"></i> Third Year</a>
-            <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <a href="logout" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
 
         <!-- <div class="main-content">

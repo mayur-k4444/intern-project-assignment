@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bsc Ds page</title>
+    <title>Bsc IT</title>
     <style>
         *{
             margin: 0;
@@ -16,17 +16,17 @@
         }
         .contaner_bscit{
             width: 100%;
-            height: 100vh;
+            height: auto;
             display: flex;
             overflow: hidden;
         }
         .navbar{
             width: auto;
-            height: 100vh;
-            overflow-y: auto;
+            height: auto;
+            /* overflow-y: auto; */
         }
         .display_bar{
-            width: 90%;
+            width: 100%;
             height: 100vh;
             overflow-y: auto;
             position: relative; 
@@ -96,6 +96,13 @@
             display: grid;
             gap: 1.5rem;
             grid-template-columns: 1fr;
+        }
+        @media (max-width: 767px) {
+            .navbar{
+                width: none;
+                display: flex;
+            }
+            
         }
 
         @media (min-width: 640px) {
@@ -341,6 +348,32 @@
                 reader.readAsDataURL(file);
             }
         });
+
+        // Handle form submission
+        document.addEventListener("DOMContentLoaded", function () {
+    const forms = document.querySelectorAll(".uploadForm");
+
+    forms.forEach(function (form) {
+        form.addEventListener("submit", function (e) {
+            const fileInput = form.querySelector(".file");
+            const file = fileInput.files[0];
+
+            // Check if file is selected
+            if (!file) {
+                alert("Please select a file before uploading.");
+                e.preventDefault();
+                return;
+            }
+
+            // Check if file is a PDF
+            if (file.type !== "application/pdf") {
+                alert("Only PDF files are allowed.");
+                e.preventDefault();
+            }
+        });
+    });
+});
+
     </script>
     
 </body>

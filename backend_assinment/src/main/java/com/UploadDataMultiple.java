@@ -1,7 +1,6 @@
 package com;
 
 import java.io.IOException;
-import java.lang.ProcessBuilder.Redirect;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -40,28 +39,23 @@ public class UploadDataMultiple extends HttpServlet {
         try {
             HttpSession session = req.getSession();
             Object studentIdObj = session.getAttribute("studentId");
-            // if (studentIdObj == null) {
-            //     responseMessage = "{\"status\":\"error\", \"message\":\"Student ID not found in session.\"}";
-            //     resp.getWriter().write(responseMessage);
-            //     return;
-            // }
             String studentId = studentIdObj.toString();
 
             String subject = req.getParameter("subject");
             Part filePart = req.getPart("file");
 
-            if (filePart == null || filePart.getSize() <= 0) {
-                responseMessage = "{\"status\":\"error\", \"message\":\"No file selected.\"}";
-                resp.getWriter().write(responseMessage);
-                return;
-            }
+            // if (filePart == null || filePart.getSize() <= 0) {
+            //     responseMessage = "{\"status\":\"error\", \"message\":\"No file selected.\"}";
+            //     resp.getWriter().write(responseMessage);
+            //     return;
+            // }
 
             String fileName = getFileName(filePart);
-            if (fileName == null) {
-                responseMessage = "{\"status\":\"error\", \"message\":\"Invalid file name.\"}";
-                resp.getWriter().write(responseMessage);
-                return;
-            }
+            // if (fileName == null) {
+            //     responseMessage = "{\"status\":\"error\", \"message\":\"Invalid file name.\"}";
+            //     resp.getWriter().write(responseMessage);
+            //     return;
+            // }
 
             // Ensure upload directory exists
             Path uploadPath = Paths.get(UPLOAD_DIR);
@@ -76,11 +70,14 @@ public class UploadDataMultiple extends HttpServlet {
             // Save file path to database
             saveFilePathToDatabase(subject, filePath.toString(), studentId);
             resp.sendRedirect("BscIT.jsp");
+           
 
             // responseMessage = "{\"status\":\"success\", \"message\":\"File uploaded successfully.\"}";
+            // resp.getWriter().write(responseMessage);
         } catch (Exception e) {
-            responseMessage = "{\"status\":\"error\", \"message\":\"Error uploading file: " + e.getMessage() + "\"}";
-            System.out.println("Error: " + e);
+            // responseMessage = "{\"status\":\"error\", \"message\":\"" + e.getMessage() + "\"}";
+            // resp.getWriter().write(responseMessage);
+            System.out.println("Error: " + e.getMessage());
         }
 
         resp.getWriter().write(responseMessage);
