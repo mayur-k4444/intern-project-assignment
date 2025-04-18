@@ -8,7 +8,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.sql.*;
 
@@ -29,11 +28,34 @@ public class registrationin extends HttpServlet{
         String password = req.getParameter("password");
         String Courselist = req.getParameter("Courselist");
 
-        HttpSession session4 = req.getSession();
-        session4.setAttribute("StudentId", studentId);
-        session4.setAttribute("email", email);
-        session4.setAttribute("password", password);
-        System.out.println("<a href='apimail'>visit second servlet </a><br>");
+        apimail gEmailSend = new apimail();
+
+        String to = email;
+        String from = "studentassignmentxyzschool@gmail.com";
+        String subject = "Registration Confirmation";
+        String text = "Dear " + firstName + ",\n\n" +
+                      "Thank you for registering. Your student ID is: " + studentId + "\n" +
+                      "Please keep your password safe.\n\n" +
+                      "Best regards,\n" +
+                      "The Team";
+
+        try {
+        boolean b = gEmailSend.sendEmail(to, from, subject, text);
+        if (b) {
+            System.out.println("Email sent successfully");
+        } else {
+            System.out.println("Email failed to send. Check logs for details.");
+        }
+        } catch (Exception e) {
+            System.out.println("Email Exception: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        // HttpSession session4 = req.getSession();
+        // session4.setAttribute("StudentId", studentId);
+        // session4.setAttribute("email", email);
+        // session4.setAttribute("password", password);
+        // System.out.println("<a href='apimail'>visit second servlet </a><br>");
         
         try {
             if (Courselist.equals("BscIT") ) {
@@ -76,6 +98,7 @@ public class registrationin extends HttpServlet{
         } catch (Exception e) {
             System.out.println("Error :"+e.getMessage());
         }
+
         
 
     }

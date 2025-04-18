@@ -27,10 +27,6 @@ function registrationvalid() {
         alert("Please enter a valid 10-digit contact number");
         return false;
     }
-    else if (document.Registration_form.studentId.value == "") {
-        alert("Please enter your student ID");
-        return false;
-    }
     else if (document.Registration_form.password.value == "") {
         alert("Please enter your password");
         return false;
@@ -47,7 +43,7 @@ function registrationvalid() {
         return true;
     }
 }
-
+document.getElementById("studentId").value = Math.floor(1000000 + Math.random() * 9000000);
 // function showError(message) {
 //     const errorDiv = document.getElementById('error');
 //     errorDiv.textContent = message;

@@ -1,101 +1,52 @@
 package com;
 
-import java.io.IOException;
 import java.util.Properties;
 
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+import jakarta.mail.Authenticator;
+import jakarta.mail.PasswordAuthentication;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.Message;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+public class apimail {
 
-@WebServlet("/apimail")
-public class apimail extends HttpServlet{
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String message = req.getParameter("message");
-        String subject = req.getParameter("subject");
-        String to = req.getParameter("to");
-        String from = req.getParameter("from");
-
-        HttpSession session = req.getSession();
-        session.setAttribute("message", message);
-        session.setAttribute("subject", subject);
-        session.setAttribute("to", to);
-        session.setAttribute("from", from);
-
-        SendEmail(message, subject, to, from);
-    }
-    public static void main(String[] args) {
+    public boolean sendEmail(String to, String from, String subject, String text){
         
-    }
-        
-    // this is responsible ro send email
-    private void SendEmail(String message, String subject, String to, String from) {
-        
-        // Set the host smtp address
-        String host = "smtp.gmail.com";
+        boolean flag = false;
 
-        //get the system properties
-        Properties properties = System.getProperties();
-        System.out.println("PROPERTIES: " + properties);
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", true);
+        properties.put("mail.smtp.starttls.enable", true);
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
 
-        //Setting importent information ro properties information
+        String username = "studentassignmentxyzschool";
+        String password = "kego ragh bcqx xbry";
 
-        //host set
-        properties.put("mail.smtp.host", host);
-        properties.put("mail.smtp.port", "465");
-        properties.put("mail.smtp.ssl.enable", "true");
-        properties.put("mail.smtp.auth", "true");
-
-        //Step 1 : to get session object..
-        Session session5 = Session.getInstance(properties, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("studentassignmentxyzschool@gmail.com","#Student2004");
-
-            }
+        Session session = Session.getInstance(properties, new Authenticator() {
+           @Override
+           protected PasswordAuthentication getPasswordAuthentication() {
+               return new PasswordAuthentication(username, password);
+           } 
         });
-        session5.setDebug(true);
 
-        //Step 2 : compose the message
-        MimeMessage stmMessage = new MimeMessage(session5);
 
         try {
-            //from email
-            stmMessage.setFrom(from);
+            Message message = new MimeMessage(session);
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+            message.setFrom(new InternetAddress(from));
+            message.setSubject(subject);
+            message.setText(text);
 
-            //adding reciipient to message
-            stmMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-
-            //adding subject to message
-            stmMessage.setSubject(subject);
-
-            //adding text to message
-            stmMessage.setText(message);
-
-            //send
-            //Step 3 : send the message using Transport class
-            Transport.send(stmMessage);
-
-            System.out.println("Sent successfull email....");
+            Transport.send(message);
+            flag = true;            
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-
-
+        
+        return flag;
     }
-
-
 }
