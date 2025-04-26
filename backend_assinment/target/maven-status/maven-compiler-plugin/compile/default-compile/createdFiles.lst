@@ -1,5 +1,6 @@
 com\apimail.class
 com\UserDaoImp.class
+com\TeacherRegistrationin.class
 com\UploadDataMultiple.class
 com\registrationin.class
 com\UserDao.class

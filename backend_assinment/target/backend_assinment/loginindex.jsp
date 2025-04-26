@@ -20,7 +20,8 @@
                 <input type="password" name="password" id="password">
             </div>
             <button type="submit" name="submit">Submit</button>
-            <a href="registrationindex.html">Registration</a>
+            <a href="registrationindex.html">Student Registration</a>
+            <a href="TeacherRegistration.jsp">Teacher Registration</a>
             <label for="error" id="error" name="error"></label>
             <% String error = request.getParameter("error");
             if(error != null && error.equals("1")){ %>
