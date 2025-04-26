@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Portal</title>
+    <link rel="stylesheet" href="teacher.css">
+</head>
+<body>
+    <div class="nav_bar">
+        <div class="container">
+            <div class="sidebar" id="sidebar">
+                <div class="close-sidebar" onclick="toggleSidebar()"></div>
+                <h2>Bsc IT</h2>
+                <div class="profile-section">
+                    <div class="profile-img-wrapper">
+                        <img src="main/img.png" alt="Student Profile" class="profile-img" id="profileImage">
+                        <div class="image-options">
+                            <label for="imageInput" class="change-photo-label">
+                                <span class="material-icons"><img src="main/image.png" width="20" height="20"></span>
+                            </label>
+                            <div class="dropdown-menu" id="imageDropdown">
+                                <div class="dropdown-item" onclick="openFileInput()">
+                                    <i class="fas fa-file-upload"></i> Upload File
+                                </div>
+                                <div class="dropdown-item" onclick="useDefaultImage()">
+                                    <i class="fas fa-image"></i> Use Default
+                                </div>
+                            </div>
+                        </div>
+                        <input type="file" id="imageInput" accept="image/*" style="display: none" onchange="changeProfilePic(event)">
+                    </div>
+                    
+                     <p id="studentName"><%= FirstName %></p>
+                    <p id="studentId">Teacher ID:<%= TeacherId%></p>
+                    <!-- <button class="edit-profile-btn" onclick="openModal()">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button> -->
+                </div>
+                <a href="BscIT.jsp"><i class="fas fa-home"></i>Teacher Profile</a>
+                <a href="#wraper" class="First_Year"><i class="fas fa-user-graduate"></i>Update Assignment</a>
+                <a href="sy/sy.html"><i class="fas fa-user-graduate"></i> Show Assignment</a>
+               
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+    
+            <!-- <div class="main-content">
+                <div class="dashboard-header">
+                    <h1>Welcome, Roshni sharma!</h1>
+                    <p>Student Dashboard</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script src="teacher.js"></script>
+</body>
+</html>
