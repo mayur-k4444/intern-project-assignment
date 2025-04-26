@@ -61,7 +61,7 @@
                 <h2>Python Programming Assignment</h2>
                 <div class="file-row">
                     <p>Assignment File</p>
-                    <a href="pt.pdf" class="download-btn" download>Download</a>
+                    <a href="main/FYIT SEM I MAR.19 (CHOICE BASE ) DIGITAL ELECTRONICS 26.MAR.19 (PC.57820).pdf" class="download-btn" download>Download</a>
                 </div>
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
@@ -83,7 +83,7 @@
                 <h2>Data Structures Assignment</h2>
                 <div class="file-row">
                     <p>Assignment File</p>
-                    <a href="pt.pdf" class="download-btn" download>Download</a>
+                    <a href="main/FYIT SEM I MAR.19 (CHOICE BASE) COMMUNICATION SKILL 29.MAR.18 (PC.57824).pdf" class="download-btn" download>Download</a>
                 </div>
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
@@ -105,7 +105,7 @@
                 <h2>Computer Networks Assignment</h2>
                 <div class="file-row">
                     <p>Assignment File</p>
-                    <a href="pt.pdf" class="download-btn" download>Download</a>
+                    <a href="main/FYIT SEM I MAR.19 (CHOICE BASE) DISCRETE MATHEMATICS 28.MAR.19 (PC.00057812).pdf" class="download-btn" download>Download</a>
                 </div>
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
@@ -127,7 +127,7 @@
                 <h2>Database Management Systems Assignment</h2>
                 <div class="file-row">
                     <p>Assignment File</p>
-                    <a href="pt.pdf" class="download-btn" download>Download</a>
+                    <a href="main/FYIT SEM I MAR.19 (CHOICE BASE) DISCRETE MATHEMATICS 28.MAR.19 (PC.00057812).pdf" class="download-btn" download>Download</a>
                 </div>
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>
@@ -149,7 +149,7 @@
                 <h2>Applied Mathematics Assignment</h2>
                 <div class="file-row">
                     <p>Assignment File</p>
-                    <a href="pt.pdf" class="download-btn" download>Download</a>
+                    <a href="main/FYIT Numerical & Statistical Method Sem II ATKT 2018-19.pdf" class="download-btn" download>Download</a>
                 </div>
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
                     <p>Upload Answer</p>

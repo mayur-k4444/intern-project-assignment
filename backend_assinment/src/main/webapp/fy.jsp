@@ -66,7 +66,7 @@
                 <h2>Imperative Programming Assignment</h2>
                 <div class="file-row">
                 <p>Assignment File</p>
-                <a href="main/pt.pdf" class="download-btn" download>Download</a>
+                <a href="main/FYIT SEM I MAR.19 (CHOICE BASE) IMPERATIVE PROGRAMMING 25.MAR.19 (PC.57815).pdf" class="download-btn" download>Download</a>
                 </div>
                 
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">   
@@ -89,7 +89,7 @@
                 <h2>Digital Electronics Assignment</h2>
                 <div class="file-row">
                 <p>Assignment File</p>
-                <a href="pt.pdf" class="download-btn" download>Download</a>    
+                <a href="main/FYIT SEM I MAR.19 (CHOICE BASE ) DIGITAL ELECTRONICS 26.MAR.19 (PC.57820).pdf" class="download-btn" download>Download</a>    
                 </div>
 
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
@@ -111,7 +111,7 @@
                 <h2>Operating Systems Assignment</h2>
                 <div class="file-row">
                 <p>Assignment File</p>
-                <a href="pt.pdf" class="download-btn" download>Download</a>
+                <a href="main/FYIT SEM I MAR.19 (CHOICE BASE) OPERATING SYSTEMS 27.MAR.19 (PC.57817).pdf" class="download-btn" download>Download</a>
             </div>
                 
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
@@ -134,7 +134,7 @@
                 <h2>Discrete Mathematics Assignment</h2>
                 <div class="file-row">
                 <p>Assignment File</p>
-                <a href="pt.pdf" class="download-btn" download>Download</a>    
+                <a href="main/FYIT SEM I MAR.19 (CHOICE BASE) DISCRETE MATHEMATICS 28.MAR.19 (PC.00057812).pdf" class="download-btn" download>Download</a>    
                 </div>
 
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
@@ -155,7 +155,7 @@
                 <h2>Communication skills Assignment</h2>
                 <div class="file-row">
                 <p>Assignment File</p>
-                <a href="pt.pdf" class="download-btn" download>Download</a>
+                <a href="main/FYIT SEM I MAR.19 (CHOICE BASE) COMMUNICATION SKILL 29.MAR.18 (PC.57824).pdf" class="download-btn" download>Download</a>
                 </div>
                 
 
@@ -188,7 +188,7 @@
                 <h2>Object Oriented Programming Assignment</h2>
                 <div class="file-row">
                 <p>Assignment File</p>
-                <a href="pt.pdf" class="download-btn" download>Download</a>
+                <a href="main/FYIT Object Oriented SEM II ATKT 2018-19.pdf" class="download-btn" download>Download</a>
             </div>
                 
             <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
@@ -211,7 +211,8 @@
                 <h2>Microprocessor architecture Assignment</h2>
                 <div class="file-row">
                 <p>Assignment File</p>
-                <a href="pt.pdf" class="download-btn" download>Download</a>    
+                <a href="main/FYIT SEM II OCT.18 (CBCGSS) MICROPROCESSOR ARCHITECTURE 5.OCT.18 (PC. 33406).pdf
+                " class="download-btn" download>Download</a>    
                 </div>
 
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
@@ -233,7 +234,7 @@
                 <h2>Web programming Assignment</h2>
                 <div class="file-row">
                 <p>Assignment File</p>
-                <a href="pt.pdf" class="download-btn" download>Download</a>
+                <a href="main/FYIT SEM II OCT.18 (CBCGSS) NUMERICAL AND STATISTICAL METHODS 9.OCT.18 (PC. 33412).pdf" class="download-btn" download>Download</a>
                 </div>
                 
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
@@ -256,7 +257,7 @@
                 <h2>Numerical and Statistical methods Assignment</h2>
                 <div class="file-row">
                 <p>Assignment File</p>
-                <a href="pt.pdf" class="download-btn" download>Download</a>    
+                <a href="main/FYIT Numerical & Statistical Method Sem II ATKT 2018-19.pdf" class="download-btn" download>Download</a>    
                 </div>
 
                 <form class="uploadForm" action="upload_data_bscit" method="post" enctype="multipart/form-data">
@@ -277,7 +278,7 @@
                 <h2>Green computing Assignment</h2>
                 <div class="file-row">
                 <p>Assignment File</p>
-                <a href="pt.pdf" class="download-btn" download>Download</a>
+                <a href="main/FYIT SEM II OCT.18 (CBCGSS) OBJECT ORIENTED 4.OCT.18 (PC. 33403).pdf" class="download-btn" download>Download</a>
                 </div>
 
 

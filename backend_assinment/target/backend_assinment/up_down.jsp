@@ -81,9 +81,9 @@ if (session1 != null && session1.getAttribute("studentId") != null) {
                 <!-- <h3 id="studentName">Roshni sharma</h3> -->
                  <p id="studentName"><%= FirstName %></p>
                 <p id="studentId">Student ID:<%= studentId%></p>
-                <button class="edit-profile-btn" onclick="openModal()">
+                <!-- <button class="edit-profile-btn" onclick="openModal()">
                     <i class="fas fa-edit"></i> Edit Profile
-                </button>
+                </button> -->
             </div>
             <a href="BscIT.jsp"><i class="fas fa-home"></i>Student Profile</a>
             <a href="#wraper" class="First_Year"><i class="fas fa-user-graduate"></i> First Year</a>
