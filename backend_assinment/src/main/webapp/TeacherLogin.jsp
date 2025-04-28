@@ -9,10 +9,10 @@
 <body>
     <div class="contaner">
         <h1>Teacher Login</h1>
-        <form action="loginform" method="post" name="Login_form" onsubmit=" return loginalert()">
+        <form action="TeacherLoginform" method="post" name="Login_form" onsubmit=" return loginalert()">
             <div class="input-group">
                 <label for="TeacherId">Teacher ID</label>
-                <input type="number" id="TeacherId" name="TeacherId >
+                <input type="text" id="TeacherId" name="TeacherId" >
             </div>
             <div class="input-group">
                 <label for="password">Password</label>

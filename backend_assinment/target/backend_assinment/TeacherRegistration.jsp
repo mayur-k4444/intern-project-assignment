@@ -51,15 +51,6 @@
                     <option value="BscIT">BscIT</option>
                 </select>
             </div>
-            <div class="input-group">
-                <label for="TeachingYear">Teaching Year</label>
-                <select id="TeachingYear" name="TeachingYear">
-                    <option value="" disabled selected>Please Select</option>
-                    <option value="FY">FY</option>
-                    <option value="SY">SY</option>
-                    <option value="TY">TY</option>
-                </select>
-            </div>
             <button type="submit" name="submit">Submit</button>
             <a href="TeacherLogin.jsp" class="login-link">Already have an account? Login</a>
             <!-- <div id="error" class="error-message" name="error"></div> -->

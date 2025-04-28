@@ -13,7 +13,7 @@
         <form action="loginform" method="post" name="Login_form" onsubmit=" return loginalert()">
             <div class="input-group">
                 <label for="studentId">Student ID</label>
-                <input type="number" id="studentId" name="studentId" >
+                <input type="text" id="studentId" name="studentId" >
             </div>
             <div class="input-group">
                 <label for="password">Password</label>

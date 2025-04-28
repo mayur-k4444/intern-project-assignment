@@ -3,7 +3,10 @@ com\UserDaoImp.class
 com\TeacherRegistrationin.class
 com\UploadDataMultiple.class
 com\registrationin.class
+com\TRuserDaoImp.class
 com\UserDao.class
 com\loginform.class
 com\logout.class
 com\apimail$1.class
+com\TRuserDao.class
+com\TeacherLoginform.class

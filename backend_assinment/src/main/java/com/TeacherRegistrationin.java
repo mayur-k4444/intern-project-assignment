@@ -25,12 +25,12 @@ public class TeacherRegistrationin extends HttpServlet{
         String TeacherId = req.getParameter("TeacherId");
         String password = req.getParameter("password");
         String faculty = req.getParameter("Faculty");
-        String teachingyear = req.getParameter("TeachingYear");
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow","root","");
-            PreparedStatement pr = con.prepareStatement("INSET INTO teacherregistration(FirstName,MiddleName,LastName,Gender,Email,Contact,TeacherId,Password,Faculty,TeachingYear) VALUES(?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement pr = con.prepareStatement("insert into teacherregistration(FirstName,MiddleName,LastName,Gender,Email,Contact,TeacherId,Password,Faculty) values(?,?,?,?,?,?,?,?,?)");
+            
             pr.setString(1, firstName);
             pr.setString(2, middleName);
             pr.setString(3, lastName);
@@ -40,7 +40,6 @@ public class TeacherRegistrationin extends HttpServlet{
             pr.setString(7, TeacherId);
             pr.setString(8, password);
             pr.setString(9, faculty);
-            pr.setString(10, teachingyear);
             int i = pr.executeUpdate();
             if (i>0) {
                 System.out.println("Registration succesfully");      
