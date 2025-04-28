@@ -152,7 +152,7 @@
   
   
   
-  .modal {
+  /* .modal { 
     display: none;
     position: fixed;
     top: 0;
@@ -199,7 +199,7 @@
     border: 1px solid #ddd;
     border-radius: 5px;
   }
-  
+   
   .save-btn {
     background: #2ecc71;
     color: white;
@@ -211,9 +211,9 @@
   }
   
   .save-btn:hover {
-    background: #27ae60;
-  }
-  .mobile-header {
+    background: #27ae60; 
+  } */
+  .teacher-header {
     display: none;
     background: #2c3e50;
     padding: 15px;
@@ -225,7 +225,7 @@
     align-items: center;
   }
   
-  .hamburger-menu {
+  .teacher-menu {
     cursor: pointer;
     margin-right: 15px;
     z-index: 1001;
@@ -250,7 +250,7 @@
   }
   
   @media (max-width: 768px) {
-    .mobile-header {
+    .teacher-header {
         display: flex;
     }
   
@@ -286,15 +286,15 @@
     }
   
     /* Animation for hamburger menu */
-    .hamburger-menu.active .bar:nth-child(1) {
+    .teacher-menu.active .bar:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
   
-    .hamburger-menu.active .bar:nth-child(2) {
+    .teacher-menu.active .bar:nth-child(2) {
         opacity: 0;
     }
   
-    .hamburger-menu.active .bar:nth-child(3) {
+    .teacher-menu.active .bar:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
   }
@@ -316,24 +316,6 @@
   }
   
   
-  
-  iframe {
-    width: 100%; 
-    height: 100%; 
-    border: none; 
-    background: #f4f4f4; 
-    overflow: hidden;
-  }
-    /* scrollbar-width: none;
-    -ms-overflow-style: none;
-  
-  iframe::-webkit-scrollbar{
-    display: none;
-  }
-  
-  .content {
-    flex-grow: 1;
-    /* padding: 20px; */
   
   
   
