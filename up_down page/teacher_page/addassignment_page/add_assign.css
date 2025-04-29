@@ -11,8 +11,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 40%;
-    /* max-width: 800px; */
+    width: 100%;
   }
   
   
@@ -35,13 +34,23 @@ body {
   }
   
   .form-row button {
-    padding: 8px 12px;
+    padding: 10px 12px;
     white-space: nowrap;
     margin-left: 0;
-    /* background-color: blue;   
+    background-color: blue;   
     color: white;             
     border: none;                    
-    cursor: pointer;          */
+    cursor: pointer;          
+    border-radius: 5px;       
+    font-size: 14px;          
+    
+  }
+  .form-row .assign{
+    padding: 10px 12px;
+    margin-left: 0;
+    background-color: blue;   
+    color: white;             
+    border: none;                             
     border-radius: 5px;       
     font-size: 14px;          
     
@@ -57,6 +66,30 @@ body {
     text-decoration: line-through;
     color: gray;
   }
+  
+  .task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .task-container span {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+
+  .task-container button {
+    margin-left: 5px;
+  }
+
+  /* li {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  } */
+
+
 
   @media (min-width: 600px) {
     .form-row {
