@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    /* padding-top: 50px; */
+  }
+  
+   .assignment-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100vh;
+    /* max-width: 800px; */
+  }
+  
+  
+  .form-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  
+  
+  .form-row input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    margin-right: 0px;
+  }
+  
+  .form-row input[type="file"] {
+    padding: 8px;
+    margin-right: 0; 
+  }
+  
+  .form-row button {
+    padding: 8px 12px;
+    white-space: nowrap;
+    margin-left: 0;
+    /* background-color: blue;   
+    color: white;             
+    border: none;                    
+    cursor: pointer;          */
+    border-radius: 5px;       
+    font-size: 14px;          
+    
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+  }
+  
+  li.completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+
+  @media (min-width: 600px) {
+    .form-row {
+      flex-wrap: nowrap;
+    }
+  
+    .form-row input[type="text"] {
+      flex: 2;
+    }
+  
+    .form-row input[type="file"] {
+      flex: 1;
+      margin-right: 0;
+    }
+  
+    .form-row button {
+      white-space: nowrap;
+    }
+  }
+  
+  /* Stack items vertically on small screens */
+  @media (max-width: 599px) {
+    .form-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .form-row input,
+    .form-row button {
+      width: 100%;
+    }
+  }
+  
+  

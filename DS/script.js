@@ -148,6 +148,7 @@ window.addEventListener('resize', () => {
     }
 });
 
+<<<<<<< HEAD:DS/script.js
 
 // function loadPage(page){
 //        let contentArea=document.getElementById("contentArea");
@@ -160,3 +161,5 @@ window.addEventListener('resize', () => {
 //        } ;
 //        xhr.send();   
 // }
+=======
+>>>>>>> feature/updating-page-effect:up_down page/script.js
