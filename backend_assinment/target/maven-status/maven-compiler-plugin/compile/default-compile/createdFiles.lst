@@ -2,6 +2,7 @@ com\UserDaoImp.class
 com\TeacherRegistrationin.class
 com\UploadDataMultiple.class
 com\registrationin.class
+com\TRdeletefile.class
 com\loginform.class
 com\logout.class
 com\apimail.class

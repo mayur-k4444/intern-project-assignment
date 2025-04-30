@@ -14,6 +14,39 @@
     <!-- <link rel="stylesheet" href="up_down.css"> -->
 </head>
 <body>
+    <% HttpSession session1 = request.getSession(false);
+
+    String FirstName=null;
+    String MiddleName=null;
+    String LastName=null;
+    String Faculty=null;
+    String Email=null;
+    String Phone=null;
+    if (session1 != null && session1.getAttribute("TeacherId") != null) {
+       
+        String TeacherId = (String) session1.getAttribute("TeacherId");
+
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow","root","");
+            PreparedStatement pr = con.prepareStatement("SELECT * FROM teacherregistration WHERE TeacherId = ?");
+            pr.setString(1,TeacherId);
+            ResultSet rs = pr.executeQuery();
+
+            if(rs.next()){
+                FirstName = rs.getString("firstName");
+                MiddleName = rs.getString("middleName");
+                LastName = rs.getString("lastName");
+                Faculty = rs.getString("Faculty");
+                Email = rs.getString("email");
+                Phone = rs.getString("Contact");
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        
+     %>
     <div class="teacher-header">
         <div class="teacher-manu" onclick="toggleSidebar()">
             <div class="bar"></div>
@@ -46,8 +79,8 @@
                     <input type="file" id="imageInput" accept="image/*" style="display: none" onchange="changeProfilePic(event)">
                 </div>
                 <!-- <h3 id="studentName">Roshni sharma</h3> -->
-                 <p id="studentName"></p>
-                <p id="studentId">Teacher ID: ST12345</p>
+                 <p id="studentName"><%= FirstName%> <%= LastName%></p>
+                <p id="studentId">Teacher ID: <%= TeacherId%></p>
                 <!-- <button class="edit-profile-btn" onclick="openModal()">
                     <i class="fas fa-edit"></i> Edit Profile
                 </button> -->
@@ -58,6 +91,12 @@
             <!-- <a href="#"><i class="fas fa-user-graduate"></i> Third Year</a> -->
             <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
+<%
+    } else {
+        // Redirect to the login page if the session is not valid
+        response.sendRedirect("index.jsp");
+    }
+%>
 
         <!-- <div class="main-content"> 
             <div class="dashboard-header">

@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import javax.security.auth.Subject;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -50,7 +52,8 @@ public class addsubject extends HttpServlet{
 
             // Save file path to database
             saveFilePathToDatabase(subject, filePath.toString());
-            resp.sendRedirect(".jsp");
+            addSubjectToDatabase(subject);
+            resp.sendRedirect("TRBscIT.jsp?msg=File uploaded successfully.");
                         
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
@@ -70,7 +73,26 @@ public class addsubject extends HttpServlet{
         } catch (Exception e) {
             System.out.println("Error saving to database: " + e);
         }
-
+    }
+    private void addSubjectToDatabase(String subject) {     
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow","root","");
+            String sql = "ALTER TABLE bscit ADD COLUMN " + subject + " TEXT";
+            java.sql.Statement stmt = con.createStatement(); // Use Statement, not PreparedStatement
+            stmt.executeUpdate(sql);
+    
+            System.out.println("Column 'subject' added to bscitsubject table.");
+            stmt.close();
+            con.close();
+            
+        } catch (Exception e) {
+            if (e.getMessage().contains("Duplicate column name")) {
+                System.out.println("Column 'subject' already exists.");
+            } else {
+                System.out.println("Error altering table: " + e.getMessage());
+            }
+        }
     }
     private String getFileName(Part part) {
         for (String content : part.getHeader("content-disposition").split(";")) {
