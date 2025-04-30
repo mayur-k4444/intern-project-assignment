@@ -33,6 +33,8 @@
   </tr>
 
 <%
+
+
 try {
     Class.forName("com.mysql.cj.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/assignmentupdow", "root", "");
@@ -40,13 +42,14 @@ try {
     ResultSet rs = stmt.executeQuery("SELECT * FROM subjectdatabase");
 
     while (rs.next()) {
-      String subject = rs.getString("subject");
+      String dbSubject = rs.getString("Subject");
+      session.setAttribute("dbSubject", dbSubject);
       String file = rs.getString("filename");
       String filePath = "file:///" + file;
       String fileEscaped = filePath.replace("'", "\\'");
       
       out.println("<tr>");
-      out.println("<td>" + subject + "</td>");
+      out.println("<td>" + dbSubject + "</td>");
       out.println("<td><button onclick=\"openPDF('" + fileEscaped + "')\">View PDF</button></td>");
       //out.println("<td><a href='" + file + "' target='_blank'>View PDF</a></td>");
       out.println("<td><a href='TRdeletefile?srno="+rs.getString("srno") +"'>Delete</a></td>");
