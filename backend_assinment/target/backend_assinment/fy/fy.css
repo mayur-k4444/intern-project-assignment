@@ -9,11 +9,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
     margin: 0;
-    padding: 20px;
+    padding: 0px;
     display: flex;
     justify-content: center;
 }
-
 .container {
     width: 100%;
     display: block;
@@ -176,6 +175,7 @@ input[type="file"]::file-selector-button:hover {
 
 }
 .wraper{
+    height: 100vh;
     flex-direction: column;
     display: flex;
 }

@@ -14,6 +14,9 @@
             box-sizing: border-box;
 
         }
+        body{
+            padding: 0;
+        }
         .contaner_bscit{
             width: 100%;
             height: auto;
@@ -324,8 +327,6 @@
 
         <div class="fyit">
             <jsp:include page="/fy.jsp"/>
-            <jsp:include page="/sy.jsp"/>
-            <jsp:include page="/ty.jsp"/>
 
         </div>
 

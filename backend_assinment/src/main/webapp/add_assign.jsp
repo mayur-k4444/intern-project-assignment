@@ -44,13 +44,13 @@ try {
     while (rs.next()) {
       String dbSubject = rs.getString("Subject");
       session.setAttribute("dbSubject", dbSubject);
-      String file = rs.getString("filename");
-      String filePath = "file:///" + file;
-      String fileEscaped = filePath.replace("'", "\\'");
+      String fullPath = rs.getString("filename");
+      String fileName = fullPath.substring(fullPath.lastIndexOf("\\") + 1); // Extract just the file name
+      String fileEscaped = fileName.replace("'", "\\'");
       
       out.println("<tr>");
       out.println("<td>" + dbSubject + "</td>");
-      out.println("<td><button onclick=\"openPDF('" + fileEscaped + "')\">View PDF</button></td>");
+      out.println("<td><button onclick=\"openPDF('BsitSuject/" + fileEscaped + "')\">View PDF</button></td>");
       //out.println("<td><a href='" + file + "' target='_blank'>View PDF</a></td>");
       out.println("<td><a href='TRdeletefile?srno="+rs.getString("srno") +"'>Delete</a></td>");
       out.println("</tr>");
