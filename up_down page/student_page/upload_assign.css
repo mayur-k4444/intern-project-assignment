@@ -16,6 +16,12 @@ body {
     text-align: center;
     width: 300px;
   }
+  .upload-container .AssignmentName{
+    flex: 1;
+    padding: 8px;
+    margin-right: 0px;
+    
+  }
   
   input[type="file"] {
     margin-top: 20px;
